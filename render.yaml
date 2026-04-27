@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: pest-scheme-mcp-server
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python server.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.0
+      - key: LANGCHAIN_PROJECT
+        value: pest-scheme-mcp-server
+      # The following variables should be added in the Render dashboard:
+      # - key: LANGCHAIN_API_KEY
+      #   sync: false
+      # - key: API_KEY
+      #   sync: false
